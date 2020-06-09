@@ -1,0 +1,7 @@
+﻿/.vs
+/src/CSharp.DDD.Data/obj
+/src/CSharp.DDD.Data/bin
+/src/CSharp.DDD.Domain/obj
+/src/CSharp.DDD.Domain/bin
+/src/CSharp.DDD.Console/obj
+/src/CSharp.DDD.Console/bin
