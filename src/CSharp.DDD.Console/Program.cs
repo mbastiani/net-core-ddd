@@ -1,4 +1,4 @@
-﻿using CSharp.DDD.Domain.Interfaces.Data;
+﻿using CSharp.DDD.Domain.Interfaces.Services;
 using CSharp.DDD.Domain.Models;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -9,13 +9,15 @@ namespace CSharp.DDD.Console
     {
         private static void Main()
         {
+            System.Console.WriteLine($"Start - {DateTime.Now}");
+
             IServiceCollection services = new ServiceCollection();
             Startup startup = new Startup();
             startup.ConfigureServices(services);
             IServiceProvider serviceProvider = services.BuildServiceProvider();
 
-            var personRepository = serviceProvider.GetService<IPersonRepository>();
-            var productRepository = serviceProvider.GetService<IProductRepository>();
+            var personService = serviceProvider.GetService<IPersonService>();
+            var productService = serviceProvider.GetService<IProductService>();
 
             var person = new Person
             {
@@ -23,7 +25,7 @@ namespace CSharp.DDD.Console
                 Email = "Person E-mail"
             };
 
-            personRepository.Add(person);
+            personService.Add(person);
 
             var product = new Product
             {
@@ -32,7 +34,10 @@ namespace CSharp.DDD.Console
                 Person = person
             };
 
-            productRepository.Add(product);
+            productService.Add(product);
+
+            System.Console.WriteLine($"Stop - {DateTime.Now}");
+            System.Console.ReadKey();
         }
     }
 }

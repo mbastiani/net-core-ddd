@@ -5,3 +5,5 @@
 /src/CSharp.DDD.Domain/bin
 /src/CSharp.DDD.Console/obj
 /src/CSharp.DDD.Console/bin
+/src/CSharp.DDD.Core/obj
+/src/CSharp.DDD.Core/bin

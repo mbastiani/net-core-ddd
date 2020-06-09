@@ -1,6 +1,8 @@
-﻿using CSharp.DDD.Data.Context;
+﻿using CSharp.DDD.Core.Services;
+using CSharp.DDD.Data.Context;
 using CSharp.DDD.Data.Repositories;
-using CSharp.DDD.Domain.Interfaces.Data;
+using CSharp.DDD.Domain.Interfaces.Repositories;
+using CSharp.DDD.Domain.Interfaces.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,9 +24,12 @@ namespace CSharp.DDD.Console
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySQL(_configuration.GetConnectionString("MySql"))
             );
-            //services.AddSingleton<AppDbContext>();
+
             services.AddTransient<IPersonRepository, PersonRepository>();
             services.AddSingleton<IProductRepository, ProductRepository>();
+
+            services.AddTransient<IPersonService, PersonService>();
+            services.AddSingleton<IProductService, ProductService>();
         }
     }
 }

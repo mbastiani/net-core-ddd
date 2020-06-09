@@ -1,5 +1,5 @@
 using CSharp.DDD.Data.Context;
-using CSharp.DDD.Domain.Interfaces.Data;
+using CSharp.DDD.Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

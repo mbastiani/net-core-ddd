@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CSharp.DDD.Domain.Interfaces.Data
+namespace CSharp.DDD.Domain.Interfaces.Repositories
 {
     public interface IBaseRepository<T> where T : class
     {

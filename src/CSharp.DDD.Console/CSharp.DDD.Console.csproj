@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CSharp.DDD.Data\CSharp.DDD.Data.csproj" />
+    <ProjectReference Include="..\CSharp.DDD.Core\CSharp.DDD.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
